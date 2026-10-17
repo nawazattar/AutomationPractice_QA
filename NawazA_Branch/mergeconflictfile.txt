@@ -1,1 +1,7 @@
+P1, P2 : Good Evening, Good Afternoon
+
+<<<<<<< HEAD
+P2: Good Evening
+=======
 P1: Good Afternoon
+>>>>>>> d2c85abd4c1ce5239901ec581782977aff6d3ff7
