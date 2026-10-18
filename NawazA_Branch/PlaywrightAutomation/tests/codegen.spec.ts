@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://sqatools.in/dummy-booking-website/');
+  await page.locator('#firstname').first().click();
+  await page.locator('#firstname').first().fill('nawaz');
+  await page.locator('#firstname').nth(1).click();
+  await page.locator('#firstname').nth(1).fill('attar');
+  await page.locator('#birthday').fill('2026-10-15');
+  await page.getByText('Male', { exact: true }).click();
+  await page.locator('#male').check();
+  await page.locator('#oneway').check();
+  await page.locator('#fromcity').click();
+  await page.locator('#fromcity').fill('Pune');
+  await page.locator('#destcity').click();
+  await page.locator('#destcity').fill('Mumbai');
+  await page.locator('#departdate').fill('2026-10-23');
+  await page.locator('#returndate').fill('2026-10-31');
+  await page.locator('#visadate').fill('2026-10-16');
+  await page.locator('#eamil').check();
+  await page.locator('#billing_name').click();
+  await page.locator('#billing_name').fill('nawaz');
+  await page.locator('#billing_phone').click();
+  await page.locator('#billing_phone').fill('123445879');
+  await page.locator('#billing_email').click();
+  await page.locator('#billing_email').fill('nawaztest@yahoo.com');
+  await page.locator('#billing_address').click();
+  await page.locator('#billing_address').fill('pune');
+  await page.locator('#billing_country').selectOption('India');
+  await page.locator('#postcode').click();
+  await page.locator('#postcode').fill('145455');
+  await page.locator('#street_address1').click();
+  await page.locator('#street_address1').fill('pune');
+  await page.getByRole('row', { name: 'Pune 2002' }).getByRole('checkbox').check();
+  await page.goto('https://sqatools.in/dummy-booking-website/#google_vignette');
+});
